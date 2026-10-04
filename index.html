@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Score Evaluation</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #fbffc2;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 280px 180px;
+        gap: 0 24px;
+        margin: auto;
+      }
+
+      .box {
+        background: #ffe0e0;
+        padding: 28px 24px 14px;
+        text-align: center;
+      }
+
+      .strip {
+        background: white;
+        padding: 12px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 10px;
+      }
+
+      #remark {
+        font-size: 16px;
+        font-weight: bold;
+        color: #4dcaff;
+      }
+
+      #name {
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+      }
+
+      #score {
+        margin: 10px 0 0;
+        font-size: 32px;
+        min-height: 38px;
+      }
+
+      .label h3 {
+        margin: 8px 0 0;
+        font-size: 26px;
+        font-weight: normal;
+      }
+
+      .photo {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        position: relative;
+      }
+
+      .photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .start {
+        align-self: flex-end;
+        margin: 0 24px 16px 0;
+        padding: 6px 18px;
+        background: #5ad1ff;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .start:hover {
+        background: #3fc3f5;
+      }
+
+      footer {
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="strip">
+          <span id="remark">PRESS THE BLUE BUTTON TO START</span>
+          <span id="name"></span>
+        </div>
+        <p id="score"></p>
+      </div>
+
+      <div class="photo">
+        <img id="cat" src="" alt="Cat reacting to the score" />
+      </div>
+
+      <div class="label"><h3>SCORE EVALUATION</h3></div>
+    </div>
+
+    <button class="start" id="startBtn">START</button>
+
+    <footer>Aksayne Danciana Ramos | 2IT-A | LAB 2</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
