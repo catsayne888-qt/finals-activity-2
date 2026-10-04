@@ -18,7 +18,6 @@ const catEl = document.getElementById("cat");
 catEl.src = images.default;
 
 // Function that evaluates the score using conditional branching
-// (the score is already validated, so it is always 1 to 100 here)
 function evaluateScore(score) {
   if (score >= 90) {
     return {
@@ -74,7 +73,7 @@ function runProgram() {
     return "done";
   }
 
-  // Validation: empty name
+  // Validation when name is empty
   if (name.trim() === "") {
     alert("Invalid input: please enter your name. Starting again...");
     return "restart";
@@ -89,7 +88,8 @@ function runProgram() {
     return "done";
   }
 
-  // Validation: empty score
+  //VALIDATIONS
+  //empty score
   if (scoreInput.trim() === "") {
     alert("Invalid input: please enter your score. Starting again...");
     return "restart";
@@ -97,25 +97,25 @@ function runProgram() {
 
   const score = Number(scoreInput.trim());
 
-  // Validation: not a number
+  //not a number
   if (isNaN(score)) {
     alert("Invalid input: the score must be a number. Starting again...");
     return "restart";
   }
 
-  // Validation: zero
+  //zero
   if (score === 0) {
     alert("Invalid input: the score cannot be zero. Starting again...");
     return "restart";
   }
 
-  // Validation: negative
+  // negative
   if (score < 0) {
     alert("Invalid input: the score cannot be negative. Starting again...");
     return "restart";
   }
 
-  // Validation: beyond 100
+  //beyond 100
   if (score > 100) {
     alert(
       "Invalid input: the score cannot be more than 100. Starting again...",
@@ -134,6 +134,7 @@ function runProgram() {
 
   // 5. Evaluate and display the result
   const result = evaluateScore(score);
+
   showResult(
     result.remark,
     result.color,
